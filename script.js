@@ -7,7 +7,7 @@ while (bombNum.length < 15) {
         bombNum.push(randomNum);
     }
 }
-
+let finish = false;
 
 //DOMContentLoaded -> innerHTML 쓸때 라이프싸이클 마지막으로 조정하는값
 document.addEventListener('DOMContentLoaded',function(){
@@ -36,6 +36,9 @@ document.addEventListener('mousedown', function() {
 });
 
 function clickTd(event){
+    if(finish === true){
+        return false;
+    }
     const target = event.target;
     let Num = parseInt(target.dataset.num);
     if(mouseClick === 0){
@@ -46,6 +49,7 @@ function clickTd(event){
                 let bombtarget = document.querySelector('[data-num="'+element+'"]');
                 bombtarget.innerHTML = "<img src='bomb.png' class='bomb'>"; 
             });
+            finish = true;
         } else{
             // 지뢰 아닐때
             let bombIdx = 0;
@@ -105,6 +109,7 @@ function clickTd(event){
             bombtarget.classList.add('open');
             if(resultCnt >= 85){
                 alert("지뢰찾기 성공!");
+                finish = true;
             }
         }
     } else{
