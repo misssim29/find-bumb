@@ -1,0 +1,9 @@
+h1{text-align: center; margin-top:50px; color:#444;}
+.bomb_board{border:1px solid #ddd; margin:50px auto; box-sizing: border-box;}
+.bomb_board tr{}
+.bomb_board tr td{text-align: center; background:#ddd; cursor: pointer; width:50px; height:50px; border:none; font-size:22px;}
+.bomb{width:80%; height:80%; margin:0 auto;}
+.bomb_board tr td.finish{background:url(finish.png) no-repeat center; background-size:80%; background-color:#ddd;}
+.bomb_board tr td.open{background-color:#fff;}
+.replay{font-size:20px; margin:0 auto; background:#444; color:#fff; border:none; cursor: pointer; border-radius: 6px; padding:10px; display: block;}
+.replay:hover{background:#ddd}
